@@ -4,37 +4,109 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Выпускное задание</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 </head>
-<script type="text/javascript">
- 
+<header>
+    <nav class="container">
+        <a class="logo" href="">
+            <img class="logo-img" src="https://i.pinimg.com/originals/2b/1e/3f/2b1e3f4a1bc65a2936789600c9d11ff6.png">
 
-var array1 = [1, 2, [3, 4, [5, 6, [7, 8, [9, 10]]]]];
-const array2 = array1.flat(Infinity);
-let result = array2.reduce(function(sum, current) {
-    return sum + current;
-}, 0);
-Array.prototype.max = function() {
-    return Math.max.apply(null, this);
-  };
-
-function f1(item, level = 0){ 
-    if (item instanceof Array){
-        return item.map(function(value, index){
-            return f1(value, level + 1)
-        }).max() - (level > 0 ? 0 : 1) 
-    }
-    return level;
-    
-}
-
-console.log("Сумма : ", result)
-console.log("Максимальнгая вложенность : " , f1(array1))
+        </a>
+        <div class="nav-toggle"><span></span></div>
+        <ul id="menu">
+            <li><a href="">Главная</a></li>
+            <li><a href="">О нас</a></li>
+            <li><a href="">Контакты</a></li>
+        </ul>
+    </nav>
+</header>
 
 
+<body>
+    <div class="container">
+        <div class="posts-list">
+            <article id="post-1" class="post">
+                <div class="post-image"><a href=""><img
+                            src="https://wikipet.ru/uploads/posts/2018-07/1531307540_mops-puppy.jpg"></a></div>
+                <div class="post-content">
+                    <h2 class="post-title">Мопс</h2>
+                    <p>Мопсы – компактные собачки, которые привлекают своим обаянием и милой мордочкой. Эта декоративная
+                        собака когда-то давно стала ...</p>
+                    <div class="post-footer">
+                        <a class="more-link" href="">Показать полностью</a>
+                    </div>
+                </div>
+            </article>
+            <article id="post-2" class="post">
+                <div class="post-image"><a href=""><img
+                            src="https://litbro.ru/wp-content/uploads/2019/05/Bigl-na-ohote-e1558872719207.jpg"></a>
+                </div>
+                <div class="post-content">
+                    <h2 class="post-title">Бигль</h2>
+                    <p>Собаки породы Бигль появились еще в средневековой Англии. Королевская знать использовала их для
+                        выслеживания оленей и косуль и охоты на ...</p>
+                    <div class="post-footer">
+                        <a class="more-link" href="">Показать полностью</a>
+                    </div>
+                </div>
+            </article>
+            <article id="post-3" class="post">
+                <div class="post-image"><a href=""><img src="https://sobaky.info/wp-content/uploads/2018/11/3.jpg"></a>
+                </div>
+                <div class="post-content">
+                    <h2 class="post-title">Бельгийская овчарка малинуа</h2>
+                    <p>Малинуа - фаворит среди бельгийских пастушьих пород собак. Они были выведены, чтобы быть
+                        полезными и надежными полевыми помощниками для ...</p>
+                    <div class="post-footer">
+                        <a class="more-link" href="">Показать полностью</a>
+                    </div>
 
-
-</script>
-<body></body>
-
+                </div>
+            </article>
+        </div>
+        <aside>
+            <div class="widget">
+                <h3 class="widget-title">Случайная статья</h3>
+                <ul class="widget-posts-list">
+                    <li>
+                        <div class="post-image-small">
+                            <a href=""><img
+                                    src="https://www.sobaka.com/wp-content/uploads//uhod-sa-sherstju-752x400.jpg"></a>
+                        </div>
+                        <h4 class="widget-post-title">Уход за шерстью</h4>
+                    </li>
+                    <li>
+                        <div class="post-image-small">
+                            <a href=""><img
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQM8tkN_-NC0JpQ3cRwec9NXmG4t99k80IGfg1n9epqFsdW3len&usqp=CAU"></a>
+                        </div>
+                        <h4 class="widget-post-title">Вакцинация</h4>
+                    </li>
+                    <li>
+                        <div class="post-image-small">
+                            <a href=""><img
+                                    src="https://www.meme-arsenal.com/memes/330595f73c43be037f6f4b3e54faac85.jpg"></a>
+                        </div>
+                        <h4 class="widget-post-title">Уход за щенками</h4>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="footer-col"><span>Собачки © 2020</span></div>
+            <div class="footer-col">
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript">
+        $('.nav-toggle').on('click', function () {
+            $('#menu').toggleClass('active');
+        });
+    </script>
+</body>
 
 </html>
