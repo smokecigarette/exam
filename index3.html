@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Выпускное задание</title>
+</head>
+<script type="text/javascript">
+
+
+ const mult = () => {
+    let cache = {};  
+            
+            return (a, b) => {
+                let result = a * b;
+                if (result in cache) {
+                    console.log('Из кэша');
+                    return cache[result];
+                }
+                else {
+                    console.log('Результат');
+                    let result = a * b;
+                    cache[result] = result;
+                    return result;
+                }
+            }
+        }
+        const newMult = mult();
+        console.log(newMult(1,8)); 
+        console.log(newMult(1,8)); 
+
+        console.log(newMult(7,8)); 
+        
+
+
+
+</script>
+<body></body>
+
+
+</html>
